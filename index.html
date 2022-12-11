@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hearthstone Project</title>
+</head>
+
+<body>
+    <div id="heroSelect" style="display: unset;">
+        <div class="row">
+            <label for="HeroSelect1">Player 1 Hero</label>
+            <select id="HeroSelect1" oninput="HeroSelect(0, +this.value)">
+                <option value="0">Mage</option>
+                <option value="1" selected>Hunter</option>
+                <option value="2">Paladin</option>
+                <!-- <option value="3">Death Knight</option>
+                <option value="4">Warlock</option>
+                <option value="5">Priest</option> -->
+                <option value="6">Norbert</option>
+            </select>
+        </div>
+        <div class="row">
+            <label for="HeroSelect2">Player 2 Hero</label>
+            <select id="HeroSelect2" oninput="HeroSelect(1, +this.value)">
+                <option value="0" selected>Mage</option>
+                <option value="1">Hunter</option>
+                <option value="2">Paladin</option>
+                <!-- <option value="3">Death Knight</option>
+                <option value="4">Warlock</option>
+                <option value="5">Priest</option> -->
+                <option value="6">Norbert</option>
+            </select>
+        </div>
+        <div class="center_row">
+            <div onclick="start_game()">Confirm choices</div>
+        </div>
+    </div>
+    <div id="game" style="display: none;">
+        <div id="board">
+            <div id="p2">
+                <div class="row">
+                    <div id="p2Hand" class="row2-large">
+                        <div class="playCard">
+                            <div class="inner-row">
+                                <div class="description">Card Description Goes Here</div>
+                            </div>
+                            <div class="inner-row">
+                                <div class="atkdisplay">
+                                    atk
+                                </div>
+                                <div class="manadisplay">
+                                    mana
+                                </div>
+                                <div class="defdisplay">
+                                    def
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playCard">
+                            <div class="inner-row">
+                                <div class="description">Card Description Goes Here</div>
+                            </div>
+                            <div class="inner-row">
+                                <div class="atkdisplay">
+                                    atk
+                                </div>
+                                <div class="manadisplay">
+                                    mana
+                                </div>
+                                <div class="defdisplay">
+                                    def
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playCard">
+                            <div class="inner-row">
+                                <div class="description">Card Description Goes Here</div>
+                            </div>
+                            <div class="inner-row">
+                                <div class="atkdisplay">
+                                    atk
+                                </div>
+                                <div class="manadisplay">
+                                    mana
+                                </div>
+                                <div class="defdisplay">
+                                    def
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="p2Mana" class="row2-small">p2Mana</div>
+                </div>
+                <div class="row">
+                    <div id="p2Weapon" class="row3-side" onclick="selectCardbySelector('weapon.1')">p2Weapon</div>
+                    <div id="p2Hero" class="row3-mid" onclick="selectCardbySelector('hero.1')">p2Hero</div>
+                    <div id="p2HeroPower" class="row3-side" onclick="selectCardbySelector('heropower.1')">p2HeroPower</div>
+                </div>
+                <div class="row">
+                    <div id="p2Table" class="row2-large" onclick="selectCardbySelector('table')">
+                        <div>p2Table1</div>
+                        <div>p2Table2</div>
+                        <div>p2Table3</div>
+                    </div>
+                    <div id="p2Deck" class="row2-small">p2Deck</div>
+                </div>
+            </div>
+
+            <div id="turn_button" onclick="end_turn()">End turn</div>
+
+            <div id="p1">
+                <div class="row">
+                    <div id="p1Table" class="row2-large" onclick="selectCardbySelector('table')">
+                        <div>p1Table1</div>
+                        <div>p1Table2</div>
+                        <div>p1Table3</div>
+                    </div>
+                    <div id="p1Deck" class="row2-small">p1Deck</div>
+                </div>
+                <div class="row">
+                    <div id="p1Weapon" class="row3-side" onclick="selectCardbySelector('weapon.0')">p1Weapon</div>
+                    <div id="p1Hero" onclick="selectCardbySelector('hero.0')" class="row3-mid" >p1Hero</div>
+                    <div id="p1HeroPower" class="row3-side" onclick="selectCardbySelector('heropower.0')">p1HeroPower</div>
+                </div>
+                <div class="row">
+                    <div id="p1Hand" class="row2-large">
+                        <div>p2Hand1</div>
+                        <div>p2Hand2</div>
+                        <div>p2Hand3</div>
+                    </div>
+                    <div id="p1Mana" class="row2-small">p1Mana</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="rotation" style="display: none;">
+        <div class="center_row">
+            <div>Player 2's Turn!</div>
+            <div onclick="start_turn()">Show board</div>
+        </div>
+    </div>
+    <div id="gameOver" style="display: none;">
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

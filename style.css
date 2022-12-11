@@ -1,0 +1,181 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 1.25vw;
+    height: 100%;
+    overflow: hidden;
+}
+
+#board {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#p1 {
+    height: 50%;
+}
+
+#p2 {
+    height: 50%;
+}
+
+.row {
+    width: 100%;
+    height: calc(100%/3);
+    border: 0.01vh solid black;
+    box-sizing: border-box;
+    display: flex;
+    flex: 1;
+}
+.row div{
+    margin: 0 auto;
+}
+
+#turn_button {
+    border: 0.01vh solid black;
+    padding: 1vh;
+    width: fit-content;
+    position: absolute;
+    top: 48vh;
+    right: 0;
+    z-index: 10;
+    background-color: white;
+}
+
+div[onclick]:hover{
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+#p1Mana, #p2Mana {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 20vw;
+    float: right;
+}
+.mana {
+    width: 1vw;
+    height: 1vw;
+    background-color: blue;
+    margin: 0;
+}
+
+#rotation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-size: 4vw;
+}
+.center_row div{
+    border: 0.5vw solid black;
+    margin-bottom: 0.35vw;
+}
+
+
+.row2-large{
+    width: 85%;
+    display: flex;
+    flex: 1;
+}
+
+.row3-side{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex: 1;
+}
+
+.row3-mid{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex: 1;
+}
+
+
+.row2-small{
+    top: 50%;
+    transform: translate(0, 45%);
+}
+
+#p1Deck, #p2Deck{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 5vw;
+    float: right;
+    border: 0.1vw solid black;
+    height: 2.5vw;
+    margin-top: 4.5vh;
+}
+
+#p1Mana, #p2Mana{
+    font-weight: bold;
+    text-align: left;
+}
+
+.playCard{
+    width: 12.5vw;
+    font-size: 1.5vw;
+    margin: 0;
+}
+.playCard div.row{
+    background-color: white;
+}
+.description{
+    font-size: 1.1vw;
+    height: 100%;
+}
+
+.manadisplay{
+    color: blue;
+}
+.atkdisplay{
+    color: red;
+}
+.defdisplay{
+    color: green;
+}
+
+.inner-row{
+    height: 21%;
+    width: 100%;
+    border: 0.01vh solid black;
+    box-sizing: border-box;
+    display: flex;
+    flex: 1;
+}
+
+.playCard .inner-row:first-child{
+    height: 80%;
+}
+
+#p1HeroPower .playCard .inner-row:first-child{
+    height: 80%;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.inner-row div{
+    margin: 0 auto;
+}
+
+#heroSelect div{
+    padding: 2vw;
+    width: 50%;
+    margin: 3vw auto 3vw auto;
+    font-size: 3vw;
+}
+
+#heroSelect div label:first-child{
+    margin: auto 3vw auto 3vw;
+}
